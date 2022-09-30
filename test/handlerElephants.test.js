@@ -22,4 +22,10 @@ describe('Testes da função HandlerElephants', () => {
   test('Para o argumento popularity deve retornar um número igual ou maior a 5', () => {
     expect(handlerElephants('popularity')).toBeGreaterThanOrEqual(5);
   });
+  test('Passando por argumento um objeto vazio ({}) deve retornar a string "Parâmetro inválido, é necessário uma string"', () => {
+    expect(handlerElephants({})).toBe('Parâmetro inválido, é necessário uma string');
+  });
+  test('Passada uma string que não contempla uma funcionalidade deve retornar null', () => {
+    expect(handlerElephants('Oi')).toBeNull();
+  });
 });
